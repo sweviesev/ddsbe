@@ -14,8 +14,8 @@ class UserController extends Controller {
 
     public function getUsers(){
         $users = User::all();
-        return response()->json($users, 200);
-    }
+        return response()->json(['data' => $users]);
+    }        
 
     public function add(Request $request) {
         $rules = [
@@ -25,8 +25,8 @@ class UserController extends Controller {
         ];
         $this->validate($request, $rules);
         $user = User::create($request->all());
-        return response()->json($user, 201);
-    }
+        return response()->json(['data' => $user]);
+    }        
 
     public function show($id)
     {
@@ -54,8 +54,8 @@ class UserController extends Controller {
         }
 
         $user->save();
-        return response()->json($user);
-    }
+        return response()->json(['data' => $user]);
+    }        
 
     public function delete($id) {
         $user = User::findOrFail($id);
