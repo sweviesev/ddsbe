@@ -6,9 +6,9 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/users', 'UserController1@getUsers'); // Get all users
-    $router->post('/users', 'UserController1@add'); // Create user
-    $router->get('/users/{id}', 'UserController1@show'); // Get user by ID
-    $router->put('/users/{id}', 'UserController1@update'); // Update user
-    $router->delete('/users/{id}', 'UserController1@delete'); // Delete user
+    $router->get('/users', 'User1Controller@getUsers'); // Get all users
+    $router->post('/users', 'User1Controller@add'); // Create user
+    $router->get('/users/{id}', 'User1Controller@show'); // Get user by ID
+    $router->put('/users/{id}', 'User1Controller@update'); // Update user
+    $router->delete('/users/{id}', 'User1Controller@delete'); // Delete user
 });
