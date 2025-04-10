@@ -5,8 +5,10 @@ use Illuminate\Http\Response;
 use App\Traits\ApiResponser;
 use App\Models\User;
 use App\Models\UserJob;
+use Laravel\Lumen\Routing\Controller as BaseController;
 
-class User1Controller extends Controller {
+
+class User1Controller extends BaseController {
     use ApiResponser;
     private $request;
 

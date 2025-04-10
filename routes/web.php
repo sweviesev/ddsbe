@@ -5,6 +5,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/test', function () {
+    return response()->json(['message' => 'Test route works!']);
+});
+
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/users', 'User1Controller@getUsers'); // Get all users
     $router->post('/users', 'User1Controller@add'); // Create user

@@ -11,7 +11,10 @@ trait ApiResponser
         return response()->json(['data' => $data], $code);
     }
     public function errorResponse($message, $code)
-    {
-        return response()->json(['error' => $message, 'code' => $code], $code);
-    }
+{
+    return response()->json([
+        'error' => is_array($message) ? $message : ['message' => $message],
+        'code' => $code
+    ], $code);
+}
 }
