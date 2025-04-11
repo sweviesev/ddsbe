@@ -72,7 +72,7 @@ $app->configure('app');
 |
 */
 
-/*$app->middleware([
+$app->middleware([
     App\Http\Middleware\AuthenticateAccess::class,
 ]);
 
